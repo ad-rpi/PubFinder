@@ -1,0 +1,374 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		72DC369954503AB736378FDB /* HomebrewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ACDC34EB865C998BC54AE3 /* HomebrewService.swift */; };
+		9CC8AAA55661F3614EA3EBFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2CB6F522A270C3B4D1EFF00 /* Assets.xcassets */; };
+		D2046070A3BD2CDBED73EDF3 /* BrewPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7F0DC0642A664C4BB2DA5A /* BrewPackage.swift */; };
+		D9D8F0833DBD9F62FF1BE701 /* BrewBrowserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388DCF43C855C0AD7E905466 /* BrewBrowserApp.swift */; };
+		FDE5B551B59DD4F93794B329 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E30A0A19CFA2729B64315 /* ContentView.swift */; };
+		C47E600100000000000000A2 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47E600100000000000000A1 /* CategoryService.swift */; };
+		C47E600100000000000000B2 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = C47E600100000000000000B1 /* categories.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2E7E30A0A19CFA2729B64315 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		388DCF43C855C0AD7E905466 /* BrewBrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewBrowserApp.swift; sourceTree = "<group>"; };
+		41E6055F33336B33F357C5A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		76930090B5F79797E1732993 /* BrewBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrewBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2CB6F522A270C3B4D1EFF00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA7F0DC0642A664C4BB2DA5A /* BrewPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewPackage.swift; sourceTree = "<group>"; };
+		C6ACDC34EB865C998BC54AE3 /* HomebrewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomebrewService.swift; sourceTree = "<group>"; };
+		C47E600100000000000000A1 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
+		C47E600100000000000000B1 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0EFEACC49E94292366BB343F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA7F0DC0642A664C4BB2DA5A /* BrewPackage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		26A943F93AE27C012C6C7E51 /* BrewBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				41E6055F33336B33F357C5A4 /* Info.plist */,
+				FBB30436A5CD4F96721A9291 /* App */,
+				0EFEACC49E94292366BB343F /* Models */,
+				D1F2FB6F1A85DF1E22D711B0 /* Resources */,
+				6640E7308E75EB03556A12C2 /* Services */,
+				5E10C8C25CBDBD1114A3147D /* Views */,
+			);
+			path = BrewBrowser;
+			sourceTree = "<group>";
+		};
+		5E10C8C25CBDBD1114A3147D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E30A0A19CFA2729B64315 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6640E7308E75EB03556A12C2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C6ACDC34EB865C998BC54AE3 /* HomebrewService.swift */,
+				C47E600100000000000000A1 /* CategoryService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		891A4DFA59698F4CA0200EE1 = {
+			isa = PBXGroup;
+			children = (
+				26A943F93AE27C012C6C7E51 /* BrewBrowser */,
+				C7E5B3C7FAEB5B8A73CAF290 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C7E5B3C7FAEB5B8A73CAF290 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76930090B5F79797E1732993 /* BrewBrowser.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D1F2FB6F1A85DF1E22D711B0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B2CB6F522A270C3B4D1EFF00 /* Assets.xcassets */,
+				C47E600100000000000000B1 /* categories.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FBB30436A5CD4F96721A9291 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				388DCF43C855C0AD7E905466 /* BrewBrowserApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A80D743ABC5B0E8548541B1 /* BrewBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A10431C326791B4BDDD0E38D /* Build configuration list for PBXNativeTarget "BrewBrowser" */;
+			buildPhases = (
+				85804D53BFD550EDBD0FC2AB /* Sources */,
+				4C4D572086A0A175FBBCD01D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrewBrowser;
+			packageProductDependencies = (
+			);
+			productName = BrewBrowser;
+			productReference = 76930090B5F79797E1732993 /* BrewBrowser.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC8127DF1921A75AE9283C22 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					9A80D743ABC5B0E8548541B1 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 63F6B78D1F62E1FC00F231EC /* Build configuration list for PBXProject "BrewBrowser" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 891A4DFA59698F4CA0200EE1;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C7E5B3C7FAEB5B8A73CAF290 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A80D743ABC5B0E8548541B1 /* BrewBrowser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C4D572086A0A175FBBCD01D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CC8AAA55661F3614EA3EBFE /* Assets.xcassets in Resources */,
+				C47E600100000000000000B2 /* categories.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85804D53BFD550EDBD0FC2AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9D8F0833DBD9F62FF1BE701 /* BrewBrowserApp.swift in Sources */,
+				D2046070A3BD2CDBED73EDF3 /* BrewPackage.swift in Sources */,
+				FDE5B551B59DD4F93794B329 /* ContentView.swift in Sources */,
+				72DC369954503AB736378FDB /* HomebrewService.swift in Sources */,
+				C47E600100000000000000A2 /* CategoryService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4E5405664DE461A24D8B9CCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6387C319CAD7D78BF24BF91B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BrewBrowser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.ad-rpi.BrewBrowser;
+				PRODUCT_NAME = BrewBrowser;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9FE4BB46266500FFC34AAFD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BrewBrowser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.ad-rpi.BrewBrowser;
+				PRODUCT_NAME = BrewBrowser;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BEE5767261C90051DBCA5087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63F6B78D1F62E1FC00F231EC /* Build configuration list for PBXProject "BrewBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEE5767261C90051DBCA5087 /* Debug */,
+				4E5405664DE461A24D8B9CCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A10431C326791B4BDDD0E38D /* Build configuration list for PBXNativeTarget "BrewBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6387C319CAD7D78BF24BF91B /* Debug */,
+				9FE4BB46266500FFC34AAFD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC8127DF1921A75AE9283C22 /* Project object */;
+}

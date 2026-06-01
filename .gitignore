@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Xcode build artifacts
+build/
+build-release/
+dist/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# This is a plain Xcode project: the .xcodeproj IS the source of truth and is committed.
+.claude/
