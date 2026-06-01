@@ -9,8 +9,7 @@ cask "brewbrowser" do
   # update this whenever you rebuild the artifact you actually upload.
   sha256 "255aa3dbf40a2a65a14139d33eac42198f2758b7ab1b993090daf25afeb6c2f9"
 
-  url "https://github.com/ad-rpi/BrewBrowser/releases/download/v#{version}/BrewBrowser-#{version}.zip",
-      verified: "github.com/ad-rpi/BrewBrowser/"
+  url "https://github.com/ad-rpi/BrewBrowser/releases/download/v#{version}/BrewBrowser-#{version}.zip"
   name "BrewBrowser"
   desc "GUI for browsing and managing Homebrew packages"
   homepage "https://github.com/ad-rpi/BrewBrowser"
