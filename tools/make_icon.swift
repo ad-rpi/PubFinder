@@ -1,6 +1,6 @@
 #!/usr/bin/env swift
 //
-// Renders the BrewBrowser app icon — a frothy beer mug under a tap — to a
+// Renders the PubFinder app icon — a frothy beer mug under a tap — to a
 // 1024×1024 PNG. tools/make_icon.sh then downsizes it into the asset catalog.
 //
 // Flat, geometric design drawn in a top-left coordinate space.

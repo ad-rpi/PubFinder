@@ -5,7 +5,7 @@ struct ContentView: View {
     @EnvironmentObject private var categories: CategoryService
 
     enum Category: Hashable {
-        case formulae, casks, outdated, browse, search
+        case formulae, casks, outdated, browse, search, taps
     }
 
     enum BrowseKind: String, CaseIterable, Identifiable {
@@ -27,6 +27,9 @@ struct ContentView: View {
     // Selected category in the category column (sentinel == show everything).
     @State private var selectedCategoryKey: String = allCategoryKey
     static let allCategoryKey = "__all__"
+
+    // Taps pane state
+    @State private var newTap = ""
 
     var body: some View {
         Group {
@@ -56,6 +59,7 @@ struct ContentView: View {
             selectedCategoryKey = Self.allCategoryKey
             selection = nil
             if newValue == .browse { Task { await brew.loadCatalog() } }
+            if newValue == .taps { Task { await brew.refreshTaps() } }
         }
         .onChange(of: selectedCategoryKey) { _, _ in selection = nil }
         .onChange(of: selection) { _, newValue in
@@ -81,9 +85,10 @@ struct ContentView: View {
             Section("Catalog") {
                 Label("Browse", systemImage: "square.grid.2x2").tag(Category.browse)
                 Label("Search", systemImage: "magnifyingglass").tag(Category.search)
+                Label("Taps", systemImage: "spigot").tag(Category.taps)
             }
         }
-        .navigationTitle("BrewBrowser")
+        .navigationTitle("PubFinder")
         .toolbar {
             ToolbarItem {
                 Button {
@@ -101,10 +106,10 @@ struct ContentView: View {
 
     @ViewBuilder
     private var contentColumn: some View {
-        if category == .search {
-            searchColumn
-        } else {
-            categoryColumn
+        switch category {
+        case .search: searchColumn
+        case .taps:   tapsColumn
+        default:      categoryColumn
         }
     }
 
@@ -163,9 +168,10 @@ struct ContentView: View {
 
     @ViewBuilder
     private var detailColumn: some View {
-        if category == .search {
-            detail
-        } else {
+        switch category {
+        case .search: detail
+        case .taps:   tapsDetail
+        default:
             HSplitView {
                 categoryPackageList
                     .frame(minWidth: 240, idealWidth: 300, maxHeight: .infinity)
@@ -173,6 +179,83 @@ struct ContentView: View {
                     .frame(minWidth: 340, maxWidth: .infinity, maxHeight: .infinity)
             }
         }
+    }
+
+    // MARK: - Taps
+
+    private var tapsColumn: some View {
+        VStack(spacing: 0) {
+            HStack {
+                TextField("owner/name (e.g. homebrew/cask-fonts)", text: $newTap)
+                    .textFieldStyle(.roundedBorder)
+                    .onSubmit(addCurrentTap)
+                Button("Add", action: addCurrentTap)
+                    .disabled(!isValidTap(newTap) || brew.isBusy)
+            }
+            .padding(8)
+            Divider()
+
+            if brew.taps.isEmpty {
+                ContentUnavailableView("No Taps", systemImage: "spigot",
+                                       description: Text("Add a tap above, e.g. ad-rpi/tap."))
+            } else {
+                List(brew.taps, id: \.self) { tap in
+                    HStack {
+                        Image(systemName: "spigot").foregroundStyle(.secondary)
+                        Text(tap)
+                        Spacer()
+                        Button(role: .destructive) {
+                            Task { await brew.removeTap(tap) }
+                        } label: {
+                            Image(systemName: "trash")
+                        }
+                        .buttonStyle(.borderless)
+                        .disabled(brew.isBusy)
+                        .help("Untap \(tap)")
+                    }
+                }
+            }
+        }
+        .overlay(alignment: .top) {
+            if brew.isBusy { ProgressView().controlSize(.small).padding(6) }
+        }
+        .navigationTitle("Taps")
+    }
+
+    @ViewBuilder
+    private var tapsDetail: some View {
+        if brew.consoleOutput.isEmpty {
+            ContentUnavailableView {
+                Label("Taps", systemImage: "spigot")
+            } description: {
+                Text("Add or remove Homebrew taps (extra formula/cask repositories). "
+                     + "Packages from your taps show up in Browse and Search.")
+            }
+        } else {
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Console").font(.caption).foregroundStyle(.secondary)
+                    .padding(.horizontal, 12).padding(.top, 8)
+                ScrollView {
+                    Text(brew.consoleOutput)
+                        .font(.system(.caption, design: .monospaced))
+                        .textSelection(.enabled)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(12)
+                }
+            }
+        }
+    }
+
+    private func addCurrentTap() {
+        let tap = newTap.trimmingCharacters(in: .whitespaces)
+        guard isValidTap(tap) else { return }
+        Task { await brew.addTap(tap); newTap = "" }
+    }
+
+    /// A valid tap is `owner/name` — exactly two non-empty slash-separated parts.
+    private func isValidTap(_ s: String) -> Bool {
+        let parts = s.trimmingCharacters(in: .whitespaces).split(separator: "/", omittingEmptySubsequences: false)
+        return parts.count == 2 && !parts[0].isEmpty && !parts[1].isEmpty
     }
 
     private var categoryPackageList: some View {
@@ -275,6 +358,7 @@ struct ContentView: View {
         case .outdated: return (brew.installedFormulae + brew.installedCasks).filter(\.outdated)
         case .search:   return brew.searchResults
         case .browse:   return browseItems
+        case .taps:     return []   // taps pane manages its own list
         }
     }
 
@@ -328,6 +412,7 @@ struct ContentView: View {
         case .outdated: return "Outdated"
         case .browse:   return "Browse Catalog"
         case .search:   return "Search"
+        case .taps:     return "Taps"
         }
     }
     private var emptyTitle: String {
@@ -476,7 +561,7 @@ private struct HomebrewMissingView: View {
             Image(systemName: "exclamationmark.triangle")
                 .font(.system(size: 48)).foregroundStyle(.orange)
             Text("Homebrew Not Found").font(.title2).fontWeight(.semibold)
-            Text("BrewBrowser couldn't find the `brew` binary in the usual locations\n(/opt/homebrew/bin or /usr/local/bin).")
+            Text("PubFinder couldn't find the `brew` binary in the usual locations\n(/opt/homebrew/bin or /usr/local/bin).")
                 .multilineTextAlignment(.center).foregroundStyle(.secondary)
             Link("Install Homebrew", destination: URL(string: "https://brew.sh")!)
                 .buttonStyle(.borderedProminent)

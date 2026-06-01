@@ -7,7 +7,7 @@ cd "$(dirname "$0")/.."
 swift tools/make_icon.swift
 
 SRC="tools/icon_src/icon_1024.png"
-SET="BrewBrowser/Resources/Assets.xcassets/AppIcon.appiconset"
+SET="PubFinder/Resources/Assets.xcassets/AppIcon.appiconset"
 
 for px in 16 32 64 128 256 512; do
   sips -z "$px" "$px" "$SRC" --out "$SET/icon_${px}.png" >/dev/null

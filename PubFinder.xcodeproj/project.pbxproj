@@ -10,7 +10,7 @@
 		72DC369954503AB736378FDB /* HomebrewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ACDC34EB865C998BC54AE3 /* HomebrewService.swift */; };
 		9CC8AAA55661F3614EA3EBFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2CB6F522A270C3B4D1EFF00 /* Assets.xcassets */; };
 		D2046070A3BD2CDBED73EDF3 /* BrewPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7F0DC0642A664C4BB2DA5A /* BrewPackage.swift */; };
-		D9D8F0833DBD9F62FF1BE701 /* BrewBrowserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388DCF43C855C0AD7E905466 /* BrewBrowserApp.swift */; };
+		D9D8F0833DBD9F62FF1BE701 /* PubFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388DCF43C855C0AD7E905466 /* PubFinderApp.swift */; };
 		FDE5B551B59DD4F93794B329 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E30A0A19CFA2729B64315 /* ContentView.swift */; };
 		C47E600100000000000000A2 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47E600100000000000000A1 /* CategoryService.swift */; };
 		C47E600100000000000000B2 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = C47E600100000000000000B1 /* categories.json */; };
@@ -18,9 +18,9 @@
 
 /* Begin PBXFileReference section */
 		2E7E30A0A19CFA2729B64315 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		388DCF43C855C0AD7E905466 /* BrewBrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewBrowserApp.swift; sourceTree = "<group>"; };
+		388DCF43C855C0AD7E905466 /* PubFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubFinderApp.swift; sourceTree = "<group>"; };
 		41E6055F33336B33F357C5A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		76930090B5F79797E1732993 /* BrewBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrewBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76930090B5F79797E1732993 /* PubFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PubFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2CB6F522A270C3B4D1EFF00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA7F0DC0642A664C4BB2DA5A /* BrewPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewPackage.swift; sourceTree = "<group>"; };
 		C6ACDC34EB865C998BC54AE3 /* HomebrewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomebrewService.swift; sourceTree = "<group>"; };
@@ -37,7 +37,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		26A943F93AE27C012C6C7E51 /* BrewBrowser */ = {
+		26A943F93AE27C012C6C7E51 /* PubFinder */ = {
 			isa = PBXGroup;
 			children = (
 				41E6055F33336B33F357C5A4 /* Info.plist */,
@@ -47,7 +47,7 @@
 				6640E7308E75EB03556A12C2 /* Services */,
 				5E10C8C25CBDBD1114A3147D /* Views */,
 			);
-			path = BrewBrowser;
+			path = PubFinder;
 			sourceTree = "<group>";
 		};
 		5E10C8C25CBDBD1114A3147D /* Views */ = {
@@ -70,7 +70,7 @@
 		891A4DFA59698F4CA0200EE1 = {
 			isa = PBXGroup;
 			children = (
-				26A943F93AE27C012C6C7E51 /* BrewBrowser */,
+				26A943F93AE27C012C6C7E51 /* PubFinder */,
 				C7E5B3C7FAEB5B8A73CAF290 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,7 +78,7 @@
 		C7E5B3C7FAEB5B8A73CAF290 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				76930090B5F79797E1732993 /* BrewBrowser.app */,
+				76930090B5F79797E1732993 /* PubFinder.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,7 +95,7 @@
 		FBB30436A5CD4F96721A9291 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				388DCF43C855C0AD7E905466 /* BrewBrowserApp.swift */,
+				388DCF43C855C0AD7E905466 /* PubFinderApp.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -103,9 +103,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9A80D743ABC5B0E8548541B1 /* BrewBrowser */ = {
+		9A80D743ABC5B0E8548541B1 /* PubFinder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A10431C326791B4BDDD0E38D /* Build configuration list for PBXNativeTarget "BrewBrowser" */;
+			buildConfigurationList = A10431C326791B4BDDD0E38D /* Build configuration list for PBXNativeTarget "PubFinder" */;
 			buildPhases = (
 				85804D53BFD550EDBD0FC2AB /* Sources */,
 				4C4D572086A0A175FBBCD01D /* Resources */,
@@ -114,11 +114,11 @@
 			);
 			dependencies = (
 			);
-			name = BrewBrowser;
+			name = PubFinder;
 			packageProductDependencies = (
 			);
-			productName = BrewBrowser;
-			productReference = 76930090B5F79797E1732993 /* BrewBrowser.app */;
+			productName = PubFinder;
+			productReference = 76930090B5F79797E1732993 /* PubFinder.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -135,7 +135,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 63F6B78D1F62E1FC00F231EC /* Build configuration list for PBXProject "BrewBrowser" */;
+			buildConfigurationList = 63F6B78D1F62E1FC00F231EC /* Build configuration list for PBXProject "PubFinder" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -149,7 +149,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9A80D743ABC5B0E8548541B1 /* BrewBrowser */,
+				9A80D743ABC5B0E8548541B1 /* PubFinder */,
 			);
 		};
 /* End PBXProject section */
@@ -171,7 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9D8F0833DBD9F62FF1BE701 /* BrewBrowserApp.swift in Sources */,
+				D9D8F0833DBD9F62FF1BE701 /* PubFinderApp.swift in Sources */,
 				D2046070A3BD2CDBED73EDF3 /* BrewPackage.swift in Sources */,
 				FDE5B551B59DD4F93794B329 /* ContentView.swift in Sources */,
 				72DC369954503AB736378FDB /* HomebrewService.swift in Sources */,
@@ -229,7 +229,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -249,14 +249,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_APP_SANDBOX = NO;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = BrewBrowser/Info.plist;
+				INFOPLIST_FILE = PubFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.ad-rpi.BrewBrowser;
-				PRODUCT_NAME = BrewBrowser;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.ad-rpi.PubFinder;
+				PRODUCT_NAME = PubFinder;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -270,14 +270,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_APP_SANDBOX = NO;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = BrewBrowser/Info.plist;
+				INFOPLIST_FILE = PubFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.ad-rpi.BrewBrowser;
-				PRODUCT_NAME = BrewBrowser;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.ad-rpi.PubFinder;
+				PRODUCT_NAME = PubFinder;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -335,7 +335,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -350,7 +350,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		63F6B78D1F62E1FC00F231EC /* Build configuration list for PBXProject "BrewBrowser" */ = {
+		63F6B78D1F62E1FC00F231EC /* Build configuration list for PBXProject "PubFinder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEE5767261C90051DBCA5087 /* Debug */,
@@ -359,7 +359,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		A10431C326791B4BDDD0E38D /* Build configuration list for PBXNativeTarget "BrewBrowser" */ = {
+		A10431C326791B4BDDD0E38D /* Build configuration list for PBXNativeTarget "PubFinder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6387C319CAD7D78BF24BF91B /* Debug */,

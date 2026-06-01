@@ -45,12 +45,12 @@ final class CategoryService: ObservableObject {
 
     /// Hosted copy on GitHub so categories can refresh without an app release.
     /// A 404/offline just falls back to the cached or bundled copy.
-    static let remoteURL = URL(string: "https://raw.githubusercontent.com/ad-rpi/BrewBrowser/main/categories.json")
+    static let remoteURL = URL(string: "https://raw.githubusercontent.com/ad-rpi/PubFinder/main/categories.json")
 
     private let etagKey = "CategoriesETag"
     private let cacheURL: URL = {
         let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("BrewBrowser", isDirectory: true)
+            .appendingPathComponent("PubFinder", isDirectory: true)
         try? FileManager.default.createDirectory(at: base, withIntermediateDirectories: true)
         return base.appendingPathComponent("categories.json")
     }()

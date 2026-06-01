@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct BrewBrowserApp: App {
+struct PubFinderApp: App {
     @StateObject private var brew = HomebrewService()
     @StateObject private var categories = CategoryService()
 

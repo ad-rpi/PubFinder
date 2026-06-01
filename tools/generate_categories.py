@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate categories.json for BrewBrowser.
+"""Generate categories.json for PubFinder.
 
 Maps Homebrew formulae/casks to Debian/Ubuntu package "Sections" (the closest
 thing the Linux world has to subject categories), with a keyword-heuristic
@@ -8,7 +8,7 @@ fallback for packages that don't match by name.
 The output is a single JSON file meant to be:
   1. bundled in the app as an offline default, and
   2. hosted on GitHub (raw URL) so categories can be refreshed without an app
-     release. BrewBrowser fetches the hosted copy at launch (ETag-cached) and
+     release. PubFinder fetches the hosted copy at launch (ETag-cached) and
      falls back to the bundled copy.
 
 Usage:
@@ -112,7 +112,7 @@ def fetch(url: str, cache_dir: str | None) -> bytes:
             with open(path, "rb") as f:
                 return f.read()
     log(f"  downloading: {url}")
-    req = urllib.request.Request(url, headers={"User-Agent": "BrewBrowser-categorygen/1"})
+    req = urllib.request.Request(url, headers={"User-Agent": "PubFinder-categorygen/1"})
     with urllib.request.urlopen(req, timeout=120) as r:
         data = r.read()
     if cache_dir:

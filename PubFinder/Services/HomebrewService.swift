@@ -15,6 +15,9 @@ final class HomebrewService: ObservableObject {
     @Published private(set) var catalogCasks: [BrewPackage] = []
     @Published private(set) var catalogLoaded = false
 
+    /// Installed taps (third-party formula/cask repositories).
+    @Published private(set) var taps: [String] = []
+
     @Published private(set) var brewPath: String?
     @Published private(set) var isBusy = false
     @Published var consoleOutput = ""
@@ -36,6 +39,40 @@ final class HomebrewService: ObservableObject {
     func refreshAll() async {
         await refreshInstalled()
         await refreshOutdated()
+        await refreshTaps()
+    }
+
+    func refreshTaps() async {
+        guard let brew = brewPath else { return }
+        let out = await Self.run(brew, ["tap"]).output
+        taps = out.split(whereSeparator: \.isNewline)
+            .map { $0.trimmingCharacters(in: .whitespaces) }
+            .filter { !$0.isEmpty }
+            .sorted { $0.localizedCaseInsensitiveCompare($1) == .orderedAscending }
+    }
+
+    /// `brew tap <name>` / `brew untap <name>`, streaming output to the console.
+    func addTap(_ name: String) async {
+        let tap = name.trimmingCharacters(in: .whitespaces)
+        guard let brew = brewPath, !tap.isEmpty else { return }
+        isBusy = true; defer { isBusy = false }
+        consoleOutput = "$ brew tap \(tap)\n"
+        let status = await Self.run(brew, ["tap", tap]) { [weak self] chunk in
+            Task { @MainActor in self?.consoleOutput += chunk }
+        }.status
+        if status != 0 { errorMessage = "brew tap \(tap) exited with code \(status)." }
+        await refreshTaps()
+    }
+
+    func removeTap(_ tap: String) async {
+        guard let brew = brewPath else { return }
+        isBusy = true; defer { isBusy = false }
+        consoleOutput = "$ brew untap \(tap)\n"
+        let status = await Self.run(brew, ["untap", tap]) { [weak self] chunk in
+            Task { @MainActor in self?.consoleOutput += chunk }
+        }.status
+        if status != 0 { errorMessage = "brew untap \(tap) exited with code \(status)." }
+        await refreshTaps()
     }
 
     func refreshInstalled() async {
